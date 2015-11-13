@@ -46,7 +46,7 @@ myimage = dw.loadImage("cat.bmp")
 #
 def updateDisplay(state):
     dw.fill(dw.black)
-    dw.draw(myimage, (state[0], height/2))
+    dw.draw(myimage, (state[0, 1, 250, 250], height/2))
 
 
 ################################################################
@@ -88,11 +88,11 @@ def endState(state):
 def handleEvent(state, event):  
 #    print("Handling event: " + str(event))
     if (event.type == pg.MOUSEBUTTONDOWN):
-        if (state[]) == 1:
-            newState = 
+        if (state[1]) == 1:
+            newState = -1
         else:
-            newState =    
-        return((state[],newState))
+            newState = 1 
+        return((state[0],newState))
     else:
         return(state)
 
@@ -101,7 +101,7 @@ def handleEvent(state, event):
 # World state will be single x coordinate at left edge of world
 
 # The cat starts at the left, moving right 
-initState = (250, 250, 0, 1)
+initState = (0, 1, 250, 250)
 
 # Run the simulation no faster than 60 frames per second
 frameRate = 60
