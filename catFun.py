@@ -38,7 +38,7 @@ rw.newDisplay(width, height, name)
 ################################################################
 
 # Display the state by drawing a cat at that x coordinate
-myimage = dw.loadImage("cat.bmp")
+myimage = dw.loadImage("alligator.bmp")
 
 # state -> image (IO)
 # draw the cat halfway up the screen (height/2) and at the x
@@ -46,7 +46,7 @@ myimage = dw.loadImage("cat.bmp")
 #
 def updateDisplay(state):
     dw.fill(dw.black)
-    dw.draw(myimage, (state[1], height/5))
+    dw.draw(myimage, (state[0], height/2))
 
 
 ################################################################
@@ -101,7 +101,7 @@ def handleEvent(state, event):
 # World state will be single x coordinate at left edge of world
 
 # The cat starts at the left, moving right
-initState = (1, 1, 250, 250)
+initState = (0, 1)
 
 # Run the simulation no faster than 60 frames per second
 frameRate = 60
